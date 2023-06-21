@@ -1,0 +1,254 @@
+body {
+    background-color: #21283E;
+    overflow: hidden;
+    }
+
+    .header {
+      position: relative; /* Add position relative to the header */
+      background-color: #002C5F;
+      padding: 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-left: 250px;
+      text-align: left;
+      border-radius: 30px;
+    }
+
+    .header h1 {
+      margin: 0px;
+      font-size: 32px;
+      color: white;
+      text-indent: 20px;
+    }
+
+    .datetime-user-container {
+      display: flex;
+      align-items: center;
+    }
+    
+    .datetime-box {
+      background-color: #ffffff;
+      padding: 10px 20px;
+      border-radius: 10px;
+      margin-right: 20px;
+    }
+
+    #dateTime {
+      color: #002C5F;
+      font-size: 18px;
+    }
+
+    #userInfo {
+      display: flex;
+      align-items: center;
+      color: white;
+      font-size: 18px;
+    }
+
+    #userInfo i {
+      background-color: #ffffff;
+      border-radius: 50%;
+      padding: 5px;
+      margin-right: 5px;
+      color: #002C5F;
+    }
+
+    
+    .user-info-container {
+      position: relative;
+      display: flex;
+      align-items: center;
+      color: white;
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    .user-info-container:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .logout-option {
+      position: absolute;
+      top: 150%;
+      right: 0;
+      background-color: #ffffff;
+      padding: 10px;
+      border-radius: 5px;
+      display: none;
+    }
+
+    .logout-option:hover {
+      background-color: #F2C94C;
+    }
+
+    .logout-option a {
+      display: block;
+      color: #002C5F;
+      text-decoration: none;
+      padding: 5px 10px;
+    }
+
+    .user-info-container:hover .logout-option {
+      display: block;
+    }
+    /* Style the logo */
+    .logo {
+      display: inline-block;
+      vertical-align: middle;
+      margin-top: -150px;
+    }
+
+    /* Style the logo image */
+    .logo img {
+      height: 250px; /* Adjust the height to fit your logo */
+      font-size: 32px;
+    }
+
+    /* Style the sidebar */
+    .sidebar {
+      background-color: #002C5F;
+      width: 150px;
+      height: 33vh; /* Adjust the height to fit your needs */
+      margin-left: -10px;
+      position: fixed;
+      padding: 15px;
+      border-radius: 30px;
+      position: fixed;
+      left: 0;
+      top: 200px;
+      display: flex;
+      flex-direction: column;
+      justify-content: left;
+    }
+
+    /* Responsive styling */  
+    @media (max-width: 768px) {
+      .sidebar {
+        width: 100%;
+        border-radius: 0;
+        position: dynamic;
+      }
+    }
+    
+    /* Style the navigation links */
+    .sidebar a {
+      display: flex;
+      align-items: center;
+      margin-bottom: 30px; /* Adjust the margin-bottom as per your needs */
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+    }
+
+    .sidebar a i {
+      margin-right: 10px; /* Add some spacing between the icon and text */
+      margin-left: 10px;
+      vertical-align: middle;
+      width: 20px;
+    }
+    
+    /* Style the active link */
+    .sidebar a.active {
+      font-weight: bold;
+      color: #F2C94C
+    }
+    
+    /* Style the content area */
+    .content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin-top: -250px;
+    }
+
+    .title {
+      font-family: 'Pacifico', cursive;
+      font-size: 32px;
+      font-weight: normal;
+      color: white;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+
+    * {
+        /* Change your font family */
+        font-family: sans-serif;
+    }
+    
+    .content-table {
+        border-collapse: collapse;
+        margin: 25px 0;
+        font-size: 1.5em;
+        min-width: 400px;
+        border-radius: 5px 5px 0 0;
+        overflow: hidden;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    }
+    
+    .content-table thead tr {
+        background-color: #320f57;
+        color: #ffffff;
+        text-align: left;
+        font-weight: bold;
+    }
+    
+    .content-table th,
+    .content-table td {
+        padding: 12px 15px;
+        color: #ffffff;
+    }
+    
+  
+    .content-table tbody tr:last-of-type {
+        border-bottom: 2px solid #320f57;
+    }
+    
+
+
+    .container1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50vh; /* Set tinggi sesuai kebutuhan */
+      }
+
+      .container2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 10vh; /* Set tinggi sesuai kebutuhan */
+      }
+
+ 
+      .btnn {
+        display: inline-block;
+        padding: 10px 20px;
+        margin-right: 10px;
+        background-color: #4CAF50;
+        color: white;
+        text-decoration: none;
+        border-radius: 4px;
+      }
+      
+      .btnn1 {
+        display: inline-block;
+        padding: 10px 20px;
+        margin-right: 10px;
+        background-color: #008CBA;
+        color: white;
+        text-decoration: none;
+        border-radius: 4px;
+      }
+      
+      .btnn2 {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #f44336;
+        color: white;
+        text-decoration: none;
+        border-radius: 4px;
+      }
+

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Website Homepage</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="penghuniakun.css">
+  <style>
+  
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1 id="headerTitle">Laporan</h1>
+    <div class="datetime-user-container">
+      <div class="datetime-box">
+        <div id="dateTime"></div>
+      </div>
+      <div class="user-info-container" onclick="toggleLogoutOption()" id="userInfoContainer">
+        <div id="userInfo"><i class="fas fa-user"></i></div>
+        <div class="logout-option" id="logoutOption">
+          <a href="#">Logout</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="logo">
+    <img src="logo.png" alt="Logo">
+  </div>
+
+  <div class="sidebar">
+    <a href="#" class="active" onclick="changePage('beranda')"><i class="fas fa-home"></i>Beranda</a>
+    <a href="#" onclick="changePage('kamar kost')"><i class="fas fa-bed"></i>Kamar Kost</a>
+    <a href="#" onclick="changePage('penghuni kost')"><i class="fas fa-users"></i>Penghuni Kost</a>
+    <a href="#" onclick="changePage('tagihan kost')"><i class="fas fa-money-bill"></i>Tagihan Kost</a>
+    <a href="#" onclick="changePage('laporan')"><i class="fas fa-file-alt"></i>Laporan</a>
+    <a href="#" onclick="changePage('komplain')"><i class="fas fa-exclamation-circle"></i>Komplain</a>
+    <a href="#" onclick="changePage('akun penghuni')"><i class="fas fa-user"></i>Akun Penghuni</a>
+  </div>
+  
+
+
+
+  <div class="container">
+    <form class="registration-form">
+      <h2>Pendaftaran Akun Penghuni</h2>
+      <div class="form-group">
+        <label for="pin">Pin:</label>
+        <input type="pin" id="pin" name="pin" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+      </div>
+      <div class="form-group">
+        <button type="submit">Daftar</button>
+      </div>
+    </form>
+  </div>
+
+
+  
+
+  <script>
+    function changePage(page) {
+      // Remove active class from all navigation links
+      const links = document.querySelectorAll('.sidebar a');
+      links.forEach(link => {
+        link.classList.remove('active');
+      });
+
+      // Add active class to the clicked link
+      const clickedLink = event.target;
+      clickedLink.classList.add('active');
+
+      // Update the page content based on the selected page
+      if (page === 'beranda') {
+        document.getElementById('pageContent').innerHTML = `
+          <div class="analytics-container">
+            <div class="analytics-row">
+              <div class="analytics-item">
+                <div class="analytics-value">12</div>
+                <div class="analytics-label">Jumlah Penghuni Kost</div>
+              </div>
+              <div class="analytics-item">
+                <div class="analytics-value">12</div>
+                <div class="analytics-label">Jumlah Kamar Kost</div>
+              </div>
+              <div class="analytics-item">
+                <div class="analytics-value">12</div>
+                <div class="analytics-label">Jumlah Komplain</div>
+              </div>
+            </div>
+            <div class="analytics-row">
+              <div class="analytics-item">
+                <div class="analytics-value">12</div>
+                <div class="analytics-label">Jumlah Tagihan</div>
+              </div>
+              <div class="analytics-item">
+                <div class="analytics-value">1.000.000</div>
+                <div class="analytics-label">Total Pendapatan</div>
+              </div>
+            </div>
+          </div>
+        `;
+      } else if (page === 'kamar kost') {
+        document.getElementById('pageContent').innerHTML = '<h2>Kamar Kost Page</h2>';
+      } else if (page === 'penghuni kost') {
+        document.getElementById('pageContent').innerHTML = '<h2>Penghuni Kost Page</h2>';
+      } else if (page === 'tagihan kost') {
+        document.getElementById('pageContent').innerHTML = '<h2>Tagihan Kost Page</h2>';
+      } else if (page === 'laporan') {
+        document.getElementById('pageContent').innerHTML = '<h2>Laporan Page</h2>';
+      } else if (page === 'komplain') {
+        document.getElementById('pageContent').innerHTML = '<h2>Komplain Page</h2>';
+      } else if (page === 'akun penghuni') {
+        document.getElementById('pageContent').innerHTML = '<h2>Akun Penghuni Page</h2>';
+      }
+
+      // Update the header title
+      document.getElementById('headerTitle').textContent = page.charAt(0).toUpperCase() + page.slice(1);
+    }
+
+    function updateDateTime() {
+      const dateTimeElement = document.getElementById("dateTime");
+      const dateTime = new Date().toLocaleString();
+      dateTimeElement.textContent = dateTime;
+    }
+
+    // Call the function initially
+    updateDateTime();
+
+    // Update the date and time every second
+    setInterval(updateDateTime, 1000);
+
+    function updateUserInfo(user) {
+      const userInfoElement = document.getElementById("userInfo");
+      userInfoElement.innerHTML = `<i class="fas fa-user"></i> ${user}`;
+    }
+
+    // Call the function initially with a sample user
+    updateUserInfo("Pak Slamet");
+
+    function toggleLogoutOption() {
+      const logoutOption = document.getElementById('logoutOption');
+      logoutOption.style.display = (logoutOption.style.display === 'block') ? 'none' : 'block';
+    }
+
+    document.addEventListener('click', function(event) {
+      const logoutOption = document.getElementById('logoutOption');
+      const userInfoContainer = document.getElementById('userInfoContainer');
+
+      if (!userInfoContainer.contains(event.target) && !logoutOption.contains(event.target)) {
+        logoutOption.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+</html>
